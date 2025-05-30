@@ -1,0 +1,234 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  color-scheme: light dark;
+  color: #E5D0AC;
+  background-color: #FEF9E1;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.ParallaxContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ParallaxLayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+nav ul {
+  justify-self: center;
+  align-self: flex-start;
+}
+
+nav li {
+  border-style: none;
+  display: inline-block;
+  padding: 25px;
+  justify-content: center;
+  align-content: flex-start;
+  color: #8a4747;
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+nav li::after {
+  content: '';
+  position: absolute;
+  height: 7px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: #6D2323;
+  transition: width .2s;
+}
+
+nav li:hover::after {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+footer {
+  background-color: #6D2323;
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  color: #E5D0AC;
+  font-size: 1rem;
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+footer li {
+  cursor: pointer;
+  position: relative;
+  padding: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: #8a4747;
+}
+
+footer a:visited {
+  color: #E5D0AC;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  transition: left 2s ease-in-out;
+}
+
+.circle.move {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+textarea {
+  resize: none;
+  width: 100%;
+  max-width: 1400px;
+  height: 300px;
+  background-color: #eee09f61;
+  color: black;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+.parallax {
+  background-attachment: fixed;
+  height: 400px;
+  position: relative;
+}
+
+.parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+#tumo {
+  width: 350px;
+  justify-self: center;
+}
+
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+form {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Ensure space between elements */
+  justify-content: space-evenly;
+}
+
+#FormContainer {
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+.FormButtons {
+  justify-content: space-evenly;
+  justify-content: space-evenly;
+  width: 100%;  /* Make buttons take full width of the form */
+  gap: 20px;    /* Space between buttons */
+}
+
+button, input {
+  background-color: #eee09f61;
+  border-radius: 15px;
+  border: none;
+  color: #8a4747;
+  font-size: 2em;
+  padding: 12px 24px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+  justify-self: center;
+}
+
+button:hover, input:hover {
+  background-color: #e5d0ac;
+  transform: scale(1.02);
+}
+
+/* Added flexbox for even spacing of form elements (inputs and button) */
+.FormInputs {
+  align-items: center;
+  gap: 20px; /* Evenly space inputs and button */
+  width: 100%;
+}
+
