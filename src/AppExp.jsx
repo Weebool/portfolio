@@ -1,42 +1,47 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import './App.css';
+import accountIcon from './assets/image/account.svg';
 
-function App() {
+// Détection automatique de l'environnement
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basePath = isGitHubPages ? '/portfolio' : '';
+
+function AppExp() {
     return (
         <>
             <nav>
                 <ul>
                     <li>
                         <img className="ImgNav"
-                             src="../image/Home.svg"
-                             alt="loading"
+                             src={`${basePath}/image/Home.svg`}
+                             alt="Accueil"
                         />
-                        <a href="index.html">Accueil</a>
+                        <Link to="/">Accueil</Link>
                     </li>
 
                     <li>
                         <img className="ImgNav"
-                             src="../image/Experience.svg"
-                             alt="loading"
+                             src={`${basePath}/image/Experience.svg`}
+                             alt="Formations"
                         />
-                        <a href="../Formations.html">Mes Formations </a>
+                        <Link to="/formations">Mes Formations</Link>
                     </li>
 
                     <li>
                         <img className="ImgNav"
-                             src="../image/Code.svg"
-                             alt="loading"
+                             src={`${basePath}/image/Code.svg`}
+                             alt="Projets"
                         />
-                        <a href="Projets.html">Mes Projets</a>
+                        <Link to="/projets">Mes Projets</Link>
                     </li>
+
                     <li>
                         <img className="ImgNav"
-                             src="../image/Contact.svg"
-                             alt="loading"
+                             src={accountIcon}
+                             alt="Contact"
                         />
-
-                        <a href="Contact.html">Me Contacter</a>
+                        <Link to="/contact">Me Contacter</Link>
                     </li>
                 </ul>
             </nav>
@@ -45,78 +50,69 @@ function App() {
                 <h1>Thomas Demarcq</h1>
             </div>
 
-            <div className={"ParallaxContainer"}>
+            <div className="ParallaxContainer">
                 <Parallax pages={2}>
                     <ParallaxLayer offset={0}>
                         <h1>Mes Diplômes
-                            <img src="image/diplome.svg" />
-
+                            <img src={`${basePath}/image/diplome.svg`} alt="Diplôme" />
                         </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam vitae risus in consectetur. Mauris eget quam eget ligula dignissim pellentesque. Fusce semper sagittis orci eu dignissim. Quisque luctus nec ante a feugiat. Nam mattis egestas sem, porta varius velit finibus ut. Curabitur scelerisque feugiat nisl in gravida. Proin vel maximus lacus. In vel orci gravida, vestibulum sem quis, ornare lorem. Maecenas nisi velit, condimentum ac nulla porttitor, blandit sagittis magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Cras a diam efficitur, facilisis nulla vitae, accumsan magna. Duis id arcu tellus. Quisque maximus faucibus suscipit. Duis venenatis massa at justo dignissim aliquet. In tempus tristique egestas.
+                        <p>Étudiant en première année de BUT informatique à l'IUT de Lens, je me spécialise dans le développement web et la cybersécurité. Mon parcours académique m'a permis d'acquérir des bases solides en programmation et en gestion de projets informatiques.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur justo eros, et accumsan arcu ornare a. Integer sed ultricies ligula. Nunc maximus feugiat convallis. Quisque ac dui euismod, pharetra massa et, fermentum nisi. Vivamus a felis in massa cursus iaculis vitae ornare ipsum. Aenean sed ligula velit. Vivamus pharetra velit eget elit accumsan, ac pretium neque pellentesque. Donec euismod eu velit interdum feugiat. Quisque tempus, ligula quis accumsan sollicitudin, odio nisl pellentesque dolor, eu pulvinar diam nisl a sapien. Fusce consequat eget massa nec euismod.
+                            Au cours de ma formation, j'ai développé des compétences en développement front-end et back-end, avec une attention particulière portée aux bonnes pratiques de sécurité. Les projets réalisés durant mon cursus m'ont permis de mettre en pratique les concepts théoriques appris en cours.
 
-                            Etiam lorem eros, commodo sed erat non, volutpat facilisis mauris. Curabitur at elit hendrerit, eleifend quam quis, dapibus nisl. Nam fringilla sit amet massa eget suscipit. Vivamus a nisl vitae lectus interdum consectetur. Cras nec sem volutpat, volutpat sem sit amet, mattis urna. Sed tincidunt aliquam eros, id ultrices justo. Ut sem nisl, mollis sed orci ac, sollicitudin condimentum purus. Suspendisse sit amet sem ligula. Pellentesque erat lectus, tincidunt in ligula commodo, cursus convallis purus. Mauris pellentesque erat elit, ac luctus nulla tincidunt nec. Suspendisse tristique mauris sed hendrerit cursus.</p>
+                            Ma formation m'a également sensibilisé aux enjeux de la transformation numérique et m'a donné les outils pour comprendre les défis technologiques actuels et futurs dans le domaine de l'informatique.</p>
                     </ParallaxLayer>
+
                     <ParallaxLayer offset={0.5}>
                         <h1>Tumo & Le Campus Du Numérique
-                            <img src="image/school.svg" />
+                            <img src={`${basePath}/image/school.svg`} alt="École" />
                         </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam vitae risus in consectetur. Mauris eget quam eget ligula dignissim pellentesque. Fusce semper sagittis orci eu dignissim. Quisque luctus nec ante a feugiat. Nam mattis egestas sem, porta varius velit finibus ut. Curabitur scelerisque feugiat nisl in gravida. Proin vel maximus lacus. In vel orci gravida, vestibulum sem quis, ornare lorem. Maecenas nisi velit, condimentum ac nulla porttitor, blandit sagittis magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Cras a diam efficitur, facilisis nulla vitae, accumsan magna. Duis id arcu tellus. Quisque maximus faucibus suscipit. Duis venenatis massa at justo dignissim aliquet. In tempus tristique egestas.
+                        <p>Ma formation au Campus du Numérique m'a permis de découvrir les métiers du digital et de développer mes premières compétences techniques. Cette expérience m'a donné un aperçu concret du monde professionnel du numérique.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur justo eros, et accumsan arcu ornare a. Integer sed ultricies ligula. Nunc maximus feugiat convallis. Quisque ac dui euismod, pharetra massa et, fermentum nisi. Vivamus a felis in massa cursus iaculis vitae ornare ipsum. Aenean sed ligula velit. Vivamus pharetra velit eget elit accumsan, ac pretium neque pellentesque. Donec euismod eu velit interdum feugiat. Quisque tempus, ligula quis accumsan sollicitudin, odio nisl pellentesque dolor, eu pulvinar diam nisl a sapien. Fusce consequat eget massa nec euismod.
+                            Chez Tumo, j'ai pu explorer différents domaines : programmation, design, robotique et cybersécurité. Cette approche multidisciplinaire m'a aidé à identifier mes centres d'intérêt et à orienter mon parcours vers la cybersécurité et le développement web.
 
-                            Etiam lorem eros, commodo sed erat non, volutpat facilisis mauris. Curabitur at elit hendrerit, eleifend quam quis, dapibus nisl. Nam fringilla sit amet massa eget suscipit. Vivamus a nisl vitae lectus interdum consectetur. Cras nec sem volutpat, volutpat sem sit amet, mattis urna. Sed tincidunt aliquam eros, id ultrices justo. Ut sem nisl, mollis sed orci ac, sollicitudin condimentum purus. Suspendisse sit amet sem ligula. Pellentesque erat lectus, tincidunt in ligula commodo, cursus convallis purus. Mauris pellentesque erat elit, ac luctus nulla tincidunt nec. Suspendisse tristique mauris sed hendrerit cursus.</p>
-                        </ParallaxLayer>
+                            Ces formations pratiques et interactives ont complété parfaitement mon cursus universitaire en m'apportant une vision plus concrète et professionnelle des technologies que j'étudie.</p>
+                    </ParallaxLayer>
 
                     <ParallaxLayer offset={1}>
-                        <h1>TryhackMe
-                            <img src="image/Login.svg" />
-
+                        <h1>TryHackMe
+                            <img src={`${basePath}/image/Login.svg`} alt="Login" />
                         </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam vitae risus in consectetur. Mauris eget quam eget ligula dignissim pellentesque. Fusce semper sagittis orci eu dignissim. Quisque luctus nec ante a feugiat. Nam mattis egestas sem, porta varius velit finibus ut. Curabitur scelerisque feugiat nisl in gravida. Proin vel maximus lacus. In vel orci gravida, vestibulum sem quis, ornare lorem. Maecenas nisi velit, condimentum ac nulla porttitor, blandit sagittis magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Cras a diam efficitur, facilisis nulla vitae, accumsan magna. Duis id arcu tellus. Quisque maximus faucibus suscipit. Duis venenatis massa at justo dignissim aliquet. In tempus tristique egestas.
+                        <p>TryHackMe constitue une partie importante de ma formation en cybersécurité. Cette plateforme m'a permis d'apprendre les concepts de sécurité informatique de manière pratique et ludique à travers des défis concrets.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur justo eros, et accumsan arcu ornare a. Integer sed ultricies ligula. Nunc maximus feugiat convallis. Quisque ac dui euismod, pharetra massa et, fermentum nisi. Vivamus a felis in massa cursus iaculis vitae ornare ipsum. Aenean sed ligula velit. Vivamus pharetra velit eget elit accumsan, ac pretium neque pellentesque. Donec euismod eu velit interdum feugiat. Quisque tempus, ligula quis accumsan sollicitudin, odio nisl pellentesque dolor, eu pulvinar diam nisl a sapien. Fusce consequat eget massa nec euismod.
+                            Grâce aux différents parcours proposés, j'ai pu développer mes compétences en test d'intrusion, analyse de malwares, et sécurité réseau. Chaque challenge résolu renforce ma compréhension des vulnérabilités et des méthodes de protection.
 
-                            Etiam lorem eros, commodo sed erat non, volutpat facilisis mauris. Curabitur at elit hendrerit, eleifend quam quis, dapibus nisl. Nam fringilla sit amet massa eget suscipit. Vivamus a nisl vitae lectus interdum consectetur. Cras nec sem volutpat, volutpat sem sit amet, mattis urna. Sed tincidunt aliquam eros, id ultrices justo. Ut sem nisl, mollis sed orci ac, sollicitudin condimentum purus. Suspendisse sit amet sem ligula. Pellentesque erat lectus, tincidunt in ligula commodo, cursus convallis purus. Mauris pellentesque erat elit, ac luctus nulla tincidunt nec. Suspendisse tristique mauris sed hendrerit cursus.</p>
+                            Cette expérience pratique complète parfaitement ma formation théorique et me prépare aux défis réels de la cybersécurité que je rencontrerai dans ma future carrière professionnelle.</p>
                     </ParallaxLayer>
 
                     <ParallaxLayer offset={1.5}>
                         <h1>LeetCode
-                            <img src="image/memory.svg" />
+                            <img src={`${basePath}/image/memory.svg`} alt="Mémoire" />
                         </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam vitae risus in consectetur. Mauris eget quam eget ligula dignissim pellentesque. Fusce semper sagittis orci eu dignissim. Quisque luctus nec ante a feugiat. Nam mattis egestas sem, porta varius velit finibus ut. Curabitur scelerisque feugiat nisl in gravida. Proin vel maximus lacus. In vel orci gravida, vestibulum sem quis, ornare lorem. Maecenas nisi velit, condimentum ac nulla porttitor, blandit sagittis magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Cras a diam efficitur, facilisis nulla vitae, accumsan magna. Duis id arcu tellus. Quisque maximus faucibus suscipit. Duis venenatis massa at justo dignissim aliquet. In tempus tristique egestas.
+                        <p>LeetCode me permet de perfectionner mes compétences en algorithmique et structures de données. Cette plateforme est devenue un outil essentiel pour améliorer ma logique de programmation et ma résolution de problèmes.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur justo eros, et accumsan arcu ornare a. Integer sed ultricies ligula. Nunc maximus feugiat convallis. Quisque ac dui euismod, pharetra massa et, fermentum nisi. Vivamus a felis in massa cursus iaculis vitae ornare ipsum. Aenean sed ligula velit. Vivamus pharetra velit eget elit accumsan, ac pretium neque pellentesque. Donec euismod eu velit interdum feugiat. Quisque tempus, ligula quis accumsan sollicitudin, odio nisl pellentesque dolor, eu pulvinar diam nisl a sapien. Fusce consequat eget massa nec euismod.
+                            La résolution régulière d'exercices sur LeetCode m'aide à développer une approche méthodique face aux défis techniques. Cela renforce également ma maîtrise des langages de programmation que j'utilise.
 
-                            Etiam lorem eros, commodo sed erat non, volutpat facilisis mauris. Curabitur at elit hendrerit, eleifend quam quis, dapibus nisl. Nam fringilla sit amet massa eget suscipit. Vivamus a nisl vitae lectus interdum consectetur. Cras nec sem volutpat, volutpat sem sit amet, mattis urna. Sed tincidunt aliquam eros, id ultrices justo. Ut sem nisl, mollis sed orci ac, sollicitudin condimentum purus. Suspendisse sit amet sem ligula. Pellentesque erat lectus, tincidunt in ligula commodo, cursus convallis purus. Mauris pellentesque erat elit, ac luctus nulla tincidunt nec. Suspendisse tristique mauris sed hendrerit cursus.</p>
+                            Cette pratique constante me prépare aux entretiens techniques et améliore ma capacité à concevoir des solutions efficaces et optimisées pour les projets que je développe.</p>
                     </ParallaxLayer>
                 </Parallax>
             </div>
 
             <footer>
                 <ul>
-                    <li>
-                        <a href="index.html" >Accueil</a>
-                    </li>
-                    <li>
-                        <a href="../Formations.html">Mes Formations </a>
-                    </li>
-
-                    <li>Mes Projets</li>
-
-                    <li><a href="Contact.html">Me Contacter</a></li>
-                    <li>
-                        <a href="Database.html" >Base De Donnée</a>
-                    </li>
+                    <li>© 2025 Thomas Demarcq. Tous droits réservés.</li>
+                    <li><Link to="/">Accueil</Link></li>
+                    <li><Link to="/formations">Mes Formations</Link></li>
+                    <li><Link to="/projets">Mes Projets</Link></li>
+                    <li><Link to="/contact">Me Contacter</Link></li>
                 </ul>
                 <img className="ImgNav"
-                     src="../image/Language.svg"
-                     alt="loading"
+                     src={`${basePath}/image/Language.svg`}
+                     alt="Langue"
                 />
             </footer>
         </>
     );
 }
 
-export default App;
+export default AppExp;

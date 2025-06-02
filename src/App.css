@@ -41,7 +41,7 @@ body {
   display: flex;
   justify-content: center;
   gap:10px ;
-  marginBottom:30px;
+  margin-bottom:30px;
 }
 
 /* Center the Parallax container itself */

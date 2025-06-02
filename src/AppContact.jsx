@@ -1,7 +1,12 @@
 import { useState } from 'react';
-import './App.css';
+import { Link } from 'react-router-dom';
+import accountIcon from './assets/image/account.svg';
 
-function ContactPage() {
+// Détection automatique de l'environnement
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basePath = isGitHubPages ? '/portfolio' : '';
+
+function AppContact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -33,43 +38,74 @@ function ContactPage() {
     };
 
     return (
-        <div className="contact-page">
+        <>
             <nav>
                 <ul>
-                    <li><img className="ImgNav" src="../image/Home.svg" alt="Accueil" /><a href="index.html">Accueil</a></li>
-                    <li><img className="ImgNav" src="../image/Experience.svg" alt="Formations" /><a href="../Formations.html">Mes Formations</a></li>
-                    <li><img className="ImgNav" src="../image/Code.svg" alt="Projets" /><a href="Projets.html">Mes Projets</a></li>
-                    <li><img className="ImgNav" src="../image/Contact.svg" alt="Contact" /><a href="Contact.html">Me Contacter</a></li>
+                    <li><img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" /><Link to="/">Accueil</Link></li>
+                    <li><img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" /><Link to="/formations">Mes Formations</Link></li>
+                    <li><img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" /><Link to="/projets">Mes Projets</Link></li>
+                    <li><img className="ImgNav" src={accountIcon} alt="Contact" /><Link to="/contact">Me Contacter</Link></li>
                 </ul>
             </nav>
+
+            <div>
+                <h1>Thomas Demarcq</h1>
+            </div>
 
             <div className="contact-content">
                 <h1>Me Contacter Par E-Mail</h1>
 
                 <form onSubmit={handleSubmit} className="contact-form">
-                    <input type="text" name="name" required placeholder="Nom" value={formData.name} onChange={handleChange} />
-                    <input type="email" name="email" required placeholder="E-Mail" value={formData.email} onChange={handleChange} />
-                    <input type="text" name="subject" required placeholder="Sujet" value={formData.subject} onChange={handleChange} />
-                    <textarea name="msg" required placeholder="Message" value={formData.msg} onChange={handleChange}></textarea>
+                    <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="Nom"
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="E-Mail"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="text"
+                        name="subject"
+                        required
+                        placeholder="Sujet"
+                        value={formData.subject}
+                        onChange={handleChange}
+                    />
+                    <textarea
+                        name="msg"
+                        required
+                        placeholder="Message"
+                        value={formData.msg}
+                        onChange={handleChange}
+                    ></textarea>
                     <button type="submit" className="submit-btn">
-                        <img src="../image/send.svg" alt="Envoyer" />
+                        <img src={`${basePath}/image/send.svg`} alt="Envoyer" />
                         Envoyer
                     </button>
                 </form>
             </div>
 
-            <footer className="contact-footer">
+            <footer>
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="../Formations.html">Mes Formations</a></li>
-                    <li><a href="Projets.html">Mes Projets</a></li>
-                    <li><a href="Contact.html">Me Contacter</a></li>
-                    <li><a href="Database.html">Base De Donnée</a></li>
+                    <li>© 2025 Thomas Demarcq. Tous droits réservés.</li>
+                    <li><Link to="/">Accueil</Link></li>
+                    <li><Link to="/formations">Mes Formations</Link></li>
+                    <li><Link to="/projets">Mes Projets</Link></li>
+                    <li><Link to="/contact">Me Contacter</Link></li>
                 </ul>
-                <img className="ImgNav" src="../image/Language.svg" alt="Langue" />
+                <img className="ImgNav" src={`${basePath}/image/Language.svg`} alt="Langue" />
             </footer>
-        </div>
+        </>
     );
 }
 
-export default ContactPage;
+export default AppContact;

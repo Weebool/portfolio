@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import './App.css';
+
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basePath = isGitHubPages ? '/portfolio' : '';
 
 function PasswordGeneratorProject() {
     const [scale, setScale] = useState(1);
@@ -10,20 +14,20 @@ function PasswordGeneratorProject() {
             <nav>
                 <ul>
                     <li>
-                        <img className="ImgNav" src="../image/Home.svg" alt="Accueil" />
-                        <a href="index.html">Accueil</a>
+                        <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                        <Link to="/">Accueil</Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src="../image/Experience.svg" alt="Formations" />
-                        <a href="../Formations.html">Mes Formations</a>
+                        <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                        <Link to="/formations">Mes Formations</Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src="../image/Code.svg" alt="Projets" />
-                        <a href="Projets.html">Mes Projets</a>
+                        <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                        <Link to="/projets">Mes Projets</Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src="../image/Contact.svg" alt="Contact" />
-                        <a href="Contact.html">Me Contacter</a>
+                        <img className="ImgNav" src={`${basePath}/image/Contact.svg`} alt="Contact" />
+                        <Link to="/contact">Me Contacter</Link>
                     </li>
                 </ul>
             </nav>
@@ -64,7 +68,6 @@ function PasswordGeneratorProject() {
                                     </ul>
                                 </div>
                             </section>
-                            
 
                             <section className="project-technical">
                                 <h2>Détails Techniques</h2>
@@ -115,14 +118,14 @@ function generatePassword(length, options) {
 
             <footer>
                 <ul>
-                    <li><a>© 2025 Thomas Demarcq. Tous droits réservés.</a></li>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="../Formations.html">Mes Formations</a></li>
-                    <li><a href="../Projets.html">Mes Projets</a></li>
-                    <li><a href="Contact.html">Me Contacter</a></li>
-                    <li><a href="Database.html">Base De Donnée</a></li>
+                    <li>© 2025 Thomas Demarcq. Tous droits réservés.</li>
+                    <li><Link to="/">Accueil</Link></li>
+                    <li><Link to="/formations">Mes Formations</Link></li>
+                    <li><Link to="/projets">Mes Projets</Link></li>
+                    <li><Link to="/contact">Me Contacter</Link></li>
+                    <li><Link to="/database">Base De Donnée</Link></li>
                 </ul>
-                <img className="ImgNav" src="../image/Language.svg" alt="Changer de langue" />
+                <img className="ImgNav" src={`${basePath}/image/Language.svg`} alt="Changer de langue" />
             </footer>
         </>
     );

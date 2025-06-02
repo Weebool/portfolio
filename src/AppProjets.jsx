@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import './App.css';
+
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basePath = isGitHubPages ? '/portfolio' : '';
 
 function ProjectsPage() {
     const [scale, setScale] = useState(1);
@@ -10,20 +13,20 @@ function ProjectsPage() {
             <nav>
                 <ul>
                     <li>
-                        <img className="ImgNav" src="../image/Home.svg" alt="Accueil" />
-                        <a href="index.html">Accueil</a>
+                        <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                        <Link to="/">Accueil</Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src="../image/Experience.svg" alt="Formations" />
-                        <a href="../Formations.html">Mes Formations</a>
+                        <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                        <Link to="/formations">Mes Formations</Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src="../image/Code.svg" alt="Projets" />
-                        <a href="Projets.html">Mes Projets</a>
+                        <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                        <Link to="/projets">Mes Projets</Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src="../image/Contact.svg" alt="Contact" />
-                        <a href="Contact.html">Me Contacter</a>
+                        <img className="ImgNav" src={`${basePath}/image/Contact.svg`} alt="Contact" />
+                        <Link to="/contact">Me Contacter</Link>
                     </li>
                 </ul>
             </nav>
@@ -46,69 +49,44 @@ function ProjectsPage() {
                     <ParallaxLayer offset={0.5}>
                         <div className="project-content">
                             <div className="projects-grid">
-                                {/* Project 1 */}
-                                <a href="Mdp.html" className="project-card project-card-gif">
+                                {/* Projet 1 */}
+                                <Link to="/mdp" className="project-card project-card-gif">
                                     <div className="project-gif-background"
                                          style={{ backgroundImage: `url(https://i.gifer.com/6LW1.gif)` }}>
                                     </div>
                                     <div className="project-content-overlay">
                                         <p className="project-title">Générateur de Mot de passe</p>
                                     </div>
-                                </a>
+                                </Link>
 
-                                {/* Project 2 - Game of Life with full background GIF */}
-                                <a href="Game.html" className="project-card project-card-gif">
+                                {/* Projet 2 - Jeu de la Vie */}
+                                <Link to="/game" className="project-card project-card-gif">
                                     <div className="project-gif-background"
                                          style={{ backgroundImage: `url(https://upload.wikimedia.org/wikipedia/commons/d/d0/Game_of_life_animated_glider_2.gif)` }}>
                                     </div>
                                     <div className="project-content-overlay">
                                         <p className="project-title">Jeu de la Vie</p>
                                     </div>
-                                </a>
-                                {/* Project 3 */}
-                                <a href="https://example.com/project-3" className="project-card">
-                                    <img src="/images/project3.jpg" alt="Projet Trois" className="project-image" />
-                                    <p className="project-title">Projet Trois</p>
-                                </a>
+                                </Link>
 
-                                {/* Project 4 */}
-                                <a href="https://example.com/project-4" className="project-card">
-                                    <img src="/images/project4.jpg" alt="Projet Quatre" className="project-image" />
-                                    <p className="project-title">Projet Quatre</p>
-                                </a>
-
-                                {/* Project 5 */}
-                                <a href="https://example.com/project-5" className="project-card">
-                                    <img src="/images/project5.jpg" alt="Projet Cinq" className="project-image" />
-                                    <p className="project-title">Projet Cinq</p>
-                                </a>
-
-                                {/* Project 6 */}
-                                <a href="https://example.com/project-6" className="project-card">
-                                    <img src="/images/project6.jpg" alt="Projet Six" className="project-image" />
-                                    <p className="project-title">Projet Six</p>
-                                </a>
-
-                                {/* Project 7 */}
-                                <a href="https://example.com/project-7" className="project-card">
-                                    <img src="/images/project7.jpg" alt="Projet Sept" className="project-image" />
-                                    <p className="project-title">Projet Sept</p>
-                                </a>
-
-                                {/* Project 8 */}
-                                <a href="https://example.com/project-8" className="project-card">
-                                    <img src="/images/project8.jpg" alt="Projet Huit" className="project-image" />
-                                    <p className="project-title">Projet Huit</p>
-                                </a>
-
-                                {/* Project 9 */}
-                                <a href="https://example.com/project-9" className="project-card">
-                                    <img src="/images/project9.jpg" alt="Projet Neuf" className="project-image" />
-                                    <p className="project-title">Projet Neuf</p>
-                                </a>
-                            </div>  
-
-
+                                {/* Projets externes */}
+                                {[3, 4, 5, 6, 7, 8, 9].map(n => (
+                                    <a
+                                        key={n}
+                                        href={`https://example.com/project-${n}`}
+                                        className="project-card"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <img
+                                            src={`${basePath}/images/project${n}.jpg`}
+                                            alt={`Projet ${n}`}
+                                            className="project-image"
+                                        />
+                                        <p className="project-title">Projet {n}</p>
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </ParallaxLayer>
                 </Parallax>
@@ -116,14 +94,14 @@ function ProjectsPage() {
 
             <footer>
                 <ul>
-                    <li><a>© 2025 Thomas Demarcq. Tous droits réservés.</a></li>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="../Formations.html">Mes Formations</a></li>
-                    <li><a href="../Projets.html">Mes Projets</a></li>
-                    <li><a href="Contact.html">Me Contacter</a></li>
-                    <li><a href="Database.html">Base De Donnée</a></li>
+                    <li>© 2025 Thomas Demarcq. Tous droits réservés.</li>
+                    <li><Link to="/">Accueil</Link></li>
+                    <li><Link to="/formations">Mes Formations</Link></li>
+                    <li><Link to="/projets">Mes Projets</Link></li>
+                    <li><Link to="/contact">Me Contacter</Link></li>
+                    <li><Link to="/database">Base De Donnée</Link></li>
                 </ul>
-                <img className="ImgNav" src="../image/Language.svg" alt="Changer de langue" />
+                <img className="ImgNav" src={`${basePath}/image/Language.svg`} alt="Changer de langue" />
             </footer>
         </>
     );
