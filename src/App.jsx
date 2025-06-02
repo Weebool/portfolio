@@ -9,7 +9,7 @@ import AppProjets from './AppProjets.jsx';
 import PasswordGeneratorProject from "./AppMdp.jsx";
 import accountIcon from './assets/image/account.svg';
 
-// Détection automatique de l'environnement
+// Détection automatique de l'environnement CORRIGÉE
 const isGitHubPages = window.location.hostname.includes('github.io');
 const basePath = isGitHubPages ? '/portfolio' : '';
 
@@ -20,10 +20,30 @@ function HomePage() {
         <>
             <nav>
                 <ul>
-                    <li><img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" /><Link to="/">Accueil</Link></li>
-                    <li><img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" /><Link to="/formations">Mes Formations</Link></li>
-                    <li><img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" /><Link to="/projets">Mes Projets</Link></li>
-                    <li><img className="ImgNav" src={accountIcon} alt="Contact" /><Link to="/contact">Me Contacter</Link></li>
+                    <li>
+                        <Link to="/">
+                            <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                            Accueil
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/formations">
+                            <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                            Mes Formations
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/projets">
+                            <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                            Mes Projets
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">
+                            <img className="ImgNav" src={accountIcon} alt="Contact" />
+                            Me Contacter
+                        </Link>
+                    </li>
                 </ul>
             </nav>
 
@@ -111,7 +131,7 @@ function HomePage() {
 
 function App() {
     return (
-        <BrowserRouter basename={isGitHubPages ? "/portfolio" : ""}>
+        <BrowserRouter basename={isGitHubPages ? "/portfolio" : undefined}>
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/contact" element={<AppContact />} />

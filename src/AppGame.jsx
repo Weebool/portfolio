@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import './App.css';
+import accountIcon from "./assets/image/account.svg";
 
 const isGitHubPages = window.location.hostname.includes('github.io');
 const basePath = isGitHubPages ? '/portfolio' : '';
@@ -14,20 +15,28 @@ function GameOfLifeProject() {
             <nav>
                 <ul>
                     <li>
-                        <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
-                        <Link to="/">Accueil</Link>
+                        <Link to="/">
+                            <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                            Accueil
+                        </Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
-                        <Link to="/formations">Mes Formations</Link>
+                        <Link to="/formations">
+                            <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                            Mes Formations
+                        </Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
-                        <Link to="/projets">Mes Projets</Link>
+                        <Link to="/projets">
+                            <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                            Mes Projets
+                        </Link>
                     </li>
                     <li>
-                        <img className="ImgNav" src={`${basePath}/image/Contact.svg`} alt="Contact" />
-                        <Link to="/contact">Me Contacter</Link>
+                        <Link to="/contact">
+                            <img className="ImgNav" src={accountIcon} alt="Contact" />
+                            Me Contacter
+                        </Link>
                     </li>
                 </ul>
             </nav>

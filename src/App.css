@@ -419,3 +419,28 @@ code {
     padding: 2rem 1rem;
   }
 }
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav li a {
+  display: flex;
+  align-items: center; /* Aligne verticalement l'image et le texte */
+  gap: 8px; /* Espacement entre l'image et le texte */
+  text-decoration: none;
+  color: inherit;
+}
+
+.ImgNav {
+
+  vertical-align: middle; /* Assure l'alignement vertical */
+  flex-shrink: 0; /* Empêche l'image de se réduire */
+}

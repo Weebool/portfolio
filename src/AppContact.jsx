@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import accountIcon from './assets/image/account.svg';
 
@@ -41,10 +41,30 @@ function AppContact() {
         <>
             <nav>
                 <ul>
-                    <li><img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" /><Link to="/">Accueil</Link></li>
-                    <li><img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" /><Link to="/formations">Mes Formations</Link></li>
-                    <li><img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" /><Link to="/projets">Mes Projets</Link></li>
-                    <li><img className="ImgNav" src={accountIcon} alt="Contact" /><Link to="/contact">Me Contacter</Link></li>
+                    <li>
+                        <Link to="/">
+                            <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                            Accueil
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/formations">
+                            <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                            Mes Formations
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/projets">
+                            <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                            Mes Projets
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">
+                            <img className="ImgNav" src={accountIcon} alt="Contact" />
+                            Me Contacter
+                        </Link>
+                    </li>
                 </ul>
             </nav>
 

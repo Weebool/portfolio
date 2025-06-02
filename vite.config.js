@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio/', // ← Nom exact de TON repo GitHub
+  base: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/', // Base path conditionnel
 })
