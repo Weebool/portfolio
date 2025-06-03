@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import accountIcon from './assets/image/account.svg';
+import languageIcon from "./assets/image/Language.svg";
+import homeIcon from "./assets/image/Home.svg";
+import experienceIcon from "./assets/image/Experience.svg";
+import codeIcon from "./assets/image/Code.svg";
+import sendIcon from "./assets/image/send.svg";
 
 // Détection automatique de l'environnement
 const isGitHubPages = window.location.hostname.includes('github.io');
@@ -43,19 +48,19 @@ function AppContact() {
                 <ul>
                     <li>
                         <Link to="/">
-                            <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                            <img className="ImgNav" src={homeIcon} alt="Accueil" />
                             Accueil
                         </Link>
                     </li>
                     <li>
                         <Link to="/formations">
-                            <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                            <img className="ImgNav" src={experienceIcon} alt="Formations" />
                             Mes Formations
                         </Link>
                     </li>
                     <li>
                         <Link to="/projets">
-                            <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                            <img className="ImgNav" src={codeIcon} alt="Projets" />
                             Mes Projets
                         </Link>
                     </li>
@@ -108,7 +113,7 @@ function AppContact() {
                         onChange={handleChange}
                     ></textarea>
                     <button type="submit" className="submit-btn">
-                        <img src={`${basePath}/image/send.svg`} alt="Envoyer" />
+                        <img src={sendIcon} alt="Envoyer" />
                         Envoyer
                     </button>
                 </form>
@@ -122,7 +127,7 @@ function AppContact() {
                     <li><Link to="/projets">Mes Projets</Link></li>
                     <li><Link to="/contact">Me Contacter</Link></li>
                 </ul>
-                <img className="ImgNav" src={`${basePath}/image/Language.svg`} alt="Langue" />
+                <img className="ImgNav" src={languageIcon} alt="Langue" />
             </footer>
         </>
     );

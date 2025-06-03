@@ -8,6 +8,15 @@ import AppExp from './AppExp.jsx';
 import AppProjets from './AppProjets.jsx';
 import PasswordGeneratorProject from "./AppMdp.jsx";
 import accountIcon from './assets/image/account.svg';
+import homeIcon from './assets/image/Home.svg'; // Vérifiez si c'est bien "Home.svg" avec H majuscule
+import experienceIcon from './assets/image/Experience.svg';
+import codeIcon from './assets/image/Code.svg';
+import languageIcon from './assets/image/Language.svg';
+import memoryIcon from './assets/image/memory.svg';
+import schoolIcon from './assets/image/school.svg';
+import diplomaIcon from './assets/image/trophy.svg';
+import shieldIcon from './assets/image/security.svg';
+
 
 // Détection automatique de l'environnement CORRIGÉE
 const isGitHubPages = window.location.hostname.includes('github.io');
@@ -22,19 +31,19 @@ function HomePage() {
                 <ul>
                     <li>
                         <Link to="/">
-                            <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                            <img className="ImgNav" src={homeIcon} alt="Accueil" />
                             Accueil
                         </Link>
                     </li>
                     <li>
                         <Link to="/formations">
-                            <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                            <img className="ImgNav" src={experienceIcon} alt="Formations" />
                             Mes Formations
                         </Link>
                     </li>
                     <li>
                         <Link to="/projets">
-                            <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                            <img className="ImgNav" src={codeIcon} alt="Projets" />
                             Mes Projets
                         </Link>
                     </li>
@@ -123,7 +132,7 @@ function HomePage() {
                     <li><Link to="/projets">Mes Projets</Link></li>
                     <li><Link to="/contact">Me Contacter</Link></li>
                 </ul>
-                <img className="ImgNav" src={`${basePath}/image/Language.svg`} alt="Langue" />
+                <img className="ImgNav" src={languageIcon} alt="Langue" />
             </footer>
         </>
     );

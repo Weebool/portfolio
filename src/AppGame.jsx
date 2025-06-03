@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import './App.css';
 import accountIcon from "./assets/image/account.svg";
+import languageIcon from "./assets/image/Language.svg";
+import homeIcon from "./assets/image/Home.svg";
+import experienceIcon from "./assets/image/Experience.svg";
+import codeIcon from "./assets/image/Code.svg";
 
 const isGitHubPages = window.location.hostname.includes('github.io');
 const basePath = isGitHubPages ? '/portfolio' : '';
@@ -16,19 +20,19 @@ function GameOfLifeProject() {
                 <ul>
                     <li>
                         <Link to="/">
-                            <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                            <img className="ImgNav" src={homeIcon} alt="Accueil" />
                             Accueil
                         </Link>
                     </li>
                     <li>
                         <Link to="/formations">
-                            <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                            <img className="ImgNav" src={experienceIcon} alt="Formations" />
                             Mes Formations
                         </Link>
                     </li>
                     <li>
                         <Link to="/projets">
-                            <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                            <img className="ImgNav" src={codeIcon} alt="Projets" />
                             Mes Projets
                         </Link>
                     </li>
@@ -132,7 +136,7 @@ function computeNextGeneration(grid) {
                     <li><Link to="/contact">Me Contacter</Link></li>
                     <li><Link to="/database">Base De Donnée</Link></li>
                 </ul>
-                <img className="ImgNav" src={`${basePath}/image/Language.svg`} alt="Changer de langue" />
+                <img className="ImgNav" src={languageIcon} alt="Langue" />
             </footer>
         </>
     );

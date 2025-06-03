@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import accountIcon from './assets/image/account.svg';
+import languageIcon from "./assets/image/Language.svg";
+import homeIcon from "./assets/image/Home.svg";
+import experienceIcon from "./assets/image/Experience.svg";
+import codeIcon from "./assets/image/Code.svg";
+import memoryIcon from './assets/image/memory.svg';
+import schoolIcon from './assets/image/school.svg';
+import diplomaIcon from './assets/image/trophy.svg';
+import shieldIcon from './assets/image/security.svg';
 
 // Détection automatique de l'environnement
 const isGitHubPages = window.location.hostname.includes('github.io');
@@ -14,19 +22,19 @@ function AppExp() {
                 <ul>
                     <li>
                         <Link to="/">
-                            <img className="ImgNav" src={`${basePath}/image/Home.svg`} alt="Accueil" />
+                            <img className="ImgNav" src={homeIcon} alt="Accueil" />
                             Accueil
                         </Link>
                     </li>
                     <li>
                         <Link to="/formations">
-                            <img className="ImgNav" src={`${basePath}/image/Experience.svg`} alt="Formations" />
+                            <img className="ImgNav" src={experienceIcon} alt="Formations" />
                             Mes Formations
                         </Link>
                     </li>
                     <li>
                         <Link to="/projets">
-                            <img className="ImgNav" src={`${basePath}/image/Code.svg`} alt="Projets" />
+                            <img className="ImgNav" src={codeIcon} alt="Projets" />
                             Mes Projets
                         </Link>
                     </li>
@@ -47,7 +55,7 @@ function AppExp() {
                 <Parallax pages={2}>
                     <ParallaxLayer offset={0}>
                         <h1>Mes Diplômes
-                            <img src={`${basePath}/image/diplome.svg`} alt="Diplôme" />
+                            <img src={diplomaIcon} alt="Diplôme" />
                         </h1>
                         <p>Étudiant en première année de BUT informatique à l'IUT de Lens, je me spécialise dans le développement web et la cybersécurité. Mon parcours académique m'a permis d'acquérir des bases solides en programmation et en gestion de projets informatiques.
 
@@ -58,7 +66,7 @@ function AppExp() {
 
                     <ParallaxLayer offset={0.5}>
                         <h1>Tumo & Le Campus Du Numérique
-                            <img src={`${basePath}/image/school.svg`} alt="École" />
+                            <img src={schoolIcon} alt="École" />
                         </h1>
                         <p>Ma formation au Campus du Numérique m'a permis de découvrir les métiers du digital et de développer mes premières compétences techniques. Cette expérience m'a donné un aperçu concret du monde professionnel du numérique.
 
@@ -69,7 +77,7 @@ function AppExp() {
 
                     <ParallaxLayer offset={1}>
                         <h1>TryHackMe
-                            <img src={`${basePath}/image/Login.svg`} alt="Login" />
+                            <img src={shieldIcon} alt="Login" />
                         </h1>
                         <p>TryHackMe constitue une partie importante de ma formation en cybersécurité. Cette plateforme m'a permis d'apprendre les concepts de sécurité informatique de manière pratique et ludique à travers des défis concrets.
 
@@ -80,7 +88,7 @@ function AppExp() {
 
                     <ParallaxLayer offset={1.5}>
                         <h1>LeetCode
-                            <img src={`${basePath}/image/memory.svg`} alt="Mémoire" />
+                            <img src={memoryIcon} alt="Mémoire" />
                         </h1>
                         <p>LeetCode me permet de perfectionner mes compétences en algorithmique et structures de données. Cette plateforme est devenue un outil essentiel pour améliorer ma logique de programmation et ma résolution de problèmes.
 
@@ -99,10 +107,8 @@ function AppExp() {
                     <li><Link to="/projets">Mes Projets</Link></li>
                     <li><Link to="/contact">Me Contacter</Link></li>
                 </ul>
-                <img className="ImgNav"
-                     src={`${basePath}/image/Language.svg`}
-                     alt="Langue"
-                />
+                <img className="ImgNav" src={languageIcon} alt="Langue" />
+
             </footer>
         </>
     );
