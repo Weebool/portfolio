@@ -16,7 +16,7 @@ import memoryIcon from './assets/image/memory.svg';
 import schoolIcon from './assets/image/school.svg';
 import diplomaIcon from './assets/image/trophy.svg';
 import shieldIcon from './assets/image/security.svg';
-
+import sendIcon from "./assets/image/send.svg";
 
 // Détection automatique de l'environnement CORRIGÉE
 const isGitHubPages = window.location.hostname.includes('github.io');
