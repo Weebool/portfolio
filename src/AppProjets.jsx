@@ -45,7 +45,7 @@ function ProjectsPage() {
             </nav>
 
             <div className="ParallaxContainer">
-                <Parallax pages={1.5} onScroll={({ y }) => setScale(1 + y * 0.3)}>
+                <Parallax pages={1} onScroll={({ y }) => setScale(1 + y * 0.3)}>
                     <ParallaxLayer offset={0.1}>
                         <div className="project-header">
                             <h1 style={{
@@ -82,23 +82,7 @@ function ProjectsPage() {
                                     </div>
                                 </Link>
 
-                                {/* Projets externes */}
-                                {[3, 4, 5, 6, 7, 8, 9].map(n => (
-                                    <a
-                                        key={n}
-                                        href={`https://example.com/project-${n}`}
-                                        className="project-card"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <img
-                                            src={`${basePath}/images/project${n}.jpg`}
-                                            alt={`Projet ${n}`}
-                                            className="project-image"
-                                        />
-                                        <p className="project-title">Projet {n}</p>
-                                    </a>
-                                ))}
+
                             </div>
                         </div>
                     </ParallaxLayer>

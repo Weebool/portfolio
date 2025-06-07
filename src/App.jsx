@@ -71,29 +71,66 @@ function HomePage() {
                             Qui suis-je ?
                         </h1>
                         <p>
-                            Étudiant en première année de BUT informatique, je vise à me former aux nouvelles technologies et surtout à la cybersécurité...
+                            Actuellement en première année de BUT informatique, j’ai pour objectif de me former à la cybersécurité car je pense que ce domaine est essentiel et le sera encore plus à l’avenir que ce soit pour les particuliers mais aussi pour les entreprises. J’ai également fait ce choix de formation car j’apprécie l’administration réseau. Malgré tout, la programmation reste un point central de ce domaine, c’est pourquoi je me penche sur des langages comme Java, Python ou encore des simulations de Processeur 68K que je programme en assembleur. Mes qualités au sein de la formation et, ultérieurement, au sein d’une entreprise sont la motivation, la curiosité et ma détermination.
                         </p>
+                        <section className="skills-section">
+                            <h2>Mes Compétences</h2>
 
-                        <section className="project-description">
-                            <h2>Technologies Maîtrisées</h2>
-                            <div className="technical-details">
-                                <div className="skills-list">
-                                    <h3>Front-end</h3>
-                                    <ul>
-                                        <li>HTML5/CSS3</li>
-                                        <li>JavaScript</li>
-                                        <li>Java</li>
-                                    </ul>
+                            <div className="skills-container">
+                                {/* Compétences Techniques */}
+                                <div className="skills-category">
+                                    <h3>
+                                        <img src={codeIcon} alt="Code" className="skill-icon" />
+                                        Compétences Techniques
+                                    </h3>
+                                    <div className="skills-grid">
+                                        <div className="skill-group">
+                                            <h4>Front-end</h4>
+                                            <ul>
+                                                <li>HTML5/CSS3</li>
+                                                <li>JavaScript</li>
+                                                <li>React</li>
+                                            </ul>
+                                        </div>
+                                        <div className="skill-group">
+                                            <h4>Back-end</h4>
+                                            <ul>
+                                                <li>Python</li>
+                                                <li>Java</li>
+                                                <li>SQL</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="skills-list">
-                                    <h3>Back-end</h3>
-                                    <ul>
-                                        <li>Python</li>
-                                        <li>SQL</li>
-                                    </ul>
+
+                                {/* Soft Skills */}
+                                <div className="skills-category">
+                                    <h3>
+                                        <img src={accountIcon} alt="Soft Skills" className="skill-icon" />
+                                        Soft Skills
+                                    </h3>
+                                    <div className="skills-grid">
+                                        <div className="skill-group">
+                                            <h4>Leadership & Communication</h4>
+                                            <ul>
+                                                <li>Gestion d'équipe</li>
+                                                <li>Communication efficace</li>
+                                                <li>Définition d'objectifs</li>
+                                            </ul>
+                                        </div>
+                                        <div className="skill-group">
+                                            <h4>Adaptabilité</h4>
+                                            <ul>
+                                                <li>Flexibilité</li>
+                                                <li>Niveau européen d'anglais</li>
+                                                <li>Apprentissage continu</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </section>
+
 
                         <h1>Vitrine de mes différents projets</h1>
                         <div className="projects-grid">
@@ -113,12 +150,7 @@ function HomePage() {
                                 </div>
                             </Link>
 
-                            {[3, 4, 5, 6, 7, 8, 9].map((n) => (
-                                <a key={n} href={`https://example.com/project-${n}`} className="project-card" target="_blank" rel="noopener noreferrer">
-                                    <img src={`${basePath}/images/project${n}.jpg`} alt={`Projet ${n}`} className="project-image" />
-                                    <p className="project-title">Projet {n}</p>
-                                </a>
-                            ))}
+
                         </div>
                     </ParallaxLayer>
                 </Parallax>

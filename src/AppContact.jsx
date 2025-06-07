@@ -78,56 +78,62 @@ function AppContact() {
             </div>
 
             <div className="contact-content">
-                <h1>Me Contacter Par E-Mail</h1>
+                <h1>Me contacter par e-mail</h1>
 
                 <form onSubmit={handleSubmit} className="contact-form">
-                    <input
-                        type="text"
-                        name="name"
-                        required
-                        placeholder="Nom"
-                        value={formData.name}
-                        onChange={handleChange}
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="E-Mail"
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
-                    <input
-                        type="text"
-                        name="subject"
-                        required
-                        placeholder="Sujet"
-                        value={formData.subject}
-                        onChange={handleChange}
-                    />
-                    <textarea
-                        name="msg"
-                        required
-                        placeholder="Message"
-                        value={formData.msg}
-                        onChange={handleChange}
-                    ></textarea>
-                    <button type="submit" className="submit-btn">
-                        <img src={sendIcon} alt="Envoyer" />
-                        Envoyer
-                    </button>
+                    <div className="form-inputs-group">
+                        <input
+                            type="text"
+                            name="name"
+                            required
+                            placeholder="Nom"
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="E-Mail"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="text"
+                            name="subject"
+                            required
+                            placeholder="Sujet"
+                            value={formData.subject}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="form-textarea-group">
+                        <textarea
+                            name="msg"
+                            required
+                            placeholder="Message"
+                            value={formData.msg}
+                            onChange={handleChange}
+                        ></textarea>
+                        <button type="submit" className="submit-btn">
+                            Envoyer
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <footer>
-                <ul>
-                    <li>© 2025 Thomas Demarcq. Tous droits réservés.</li>
-                    <li><Link to="/">Accueil</Link></li>
-                    <li><Link to="/formations">Mes Formations</Link></li>
-                    <li><Link to="/projets">Mes Projets</Link></li>
-                    <li><Link to="/contact">Me Contacter</Link></li>
-                </ul>
-                <img className="ImgNav" src={languageIcon} alt="Langue" />
+                <div className="footer-content">
+                    <ul>
+                        <li>© 2025 Thomas Demarcq. Tous droits réservés.</li>
+                        <li><Link to="/">Accueil</Link></li>
+                        <li><Link to="/formations">Mes Formations</Link></li>
+                        <li><Link to="/projets">Mes Projets</Link></li>
+                        <li><Link to="/contact">Me Contacter</Link></li>
+                    </ul>
+                    <img className="ImgNav" src={languageIcon} alt="Langue" />
+                </div>
             </footer>
         </>
     );

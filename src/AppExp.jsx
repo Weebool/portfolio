@@ -57,44 +57,36 @@ function AppExp() {
                         <h1>Mes Diplômes
                             <img src={diplomaIcon} alt="Diplôme" />
                         </h1>
-                        <p>Étudiant en première année de BUT informatique à l'IUT de Lens, je me spécialise dans le développement web et la cybersécurité. Mon parcours académique m'a permis d'acquérir des bases solides en programmation et en gestion de projets informatiques.
-
-                            Au cours de ma formation, j'ai développé des compétences en développement front-end et back-end, avec une attention particulière portée aux bonnes pratiques de sécurité. Les projets réalisés durant mon cursus m'ont permis de mettre en pratique les concepts théoriques appris en cours.
-
-                            Ma formation m'a également sensibilisé aux enjeux de la transformation numérique et m'a donné les outils pour comprendre les défis technologiques actuels et futurs dans le domaine de l'informatique.</p>
-                    </ParallaxLayer>
+                        <p>
+                            Suite à l’obtention d’un BAC général avec les enseignements de spécialité NSI ("Numérique et sciences informatiques") et géopolitique ainsi que les options mathématiques complémentaires et anglais européen, je me suis orienté vers le BUT informatique de l’Institut Universitaire de Technologie 2 de Grenoble. Cette formation me permet de me spécialiser dans le développement web et la cybersécurité et d’acquérir des bases solides en programmation et en gestion de projets informatiques. Elle m’a également permis de développer des compétences en développement front-end et back-end tout en veillant au respect des pratiques de sécurité. Enfin cette formation a contribué à me sensibiliser aux enjeux autour de la transformation numérique et à comprendre les défis technologiques actuels et futurs dans le domaine de l'informatique.
+                        </p>
+                        </ParallaxLayer>
 
                     <ParallaxLayer offset={0.5}>
                         <h1>Tumo & Le Campus Du Numérique
                             <img src={schoolIcon} alt="École" />
                         </h1>
-                        <p>Ma formation au Campus du Numérique m'a permis de découvrir les métiers du digital et de développer mes premières compétences techniques. Cette expérience m'a donné un aperçu concret du monde professionnel du numérique.
-
-                            Chez Tumo, j'ai pu explorer différents domaines : programmation, design, robotique et cybersécurité. Cette approche multidisciplinaire m'a aidé à identifier mes centres d'intérêt et à orienter mon parcours vers la cybersécurité et le développement web.
-
-                            Ces formations pratiques et interactives ont complété parfaitement mon cursus universitaire en m'apportant une vision plus concrète et professionnelle des technologies que j'étudie.</p>
+                        <p>
+                            En parallèle de mon cursus dans le secondaire, j’ai eu la chance de participer à la formation proposée par le Campus du Numérique durant 3 ans. Celle-ci m’a permis de découvrir les métiers du digital en m’offrant un aperçu concret du monde professionnel du numérique. Pendant ce cycle j’ai développé mes premières compétences techniques dans différents domaines tels que la robotique, la programmation, la cybersécurité ou encore le design. Cette approche pluridisciplinaire était très intéressante et très formatrice car elle m’a permis d’identifier mes centres d’intérêt et à terme d’orienter mon parcours vers la cybersécurité ainsi que le développement web. Cette formation est un réel plus à mon bagage universitaire car l’approche était moins théorique.
+                        </p>
                     </ParallaxLayer>
 
                     <ParallaxLayer offset={1}>
                         <h1>TryHackMe
                             <img src={shieldIcon} alt="Login" />
                         </h1>
-                        <p>TryHackMe constitue une partie importante de ma formation en cybersécurité. Cette plateforme m'a permis d'apprendre les concepts de sécurité informatique de manière pratique et ludique à travers des défis concrets.
+                        <p>
 
-                            Grâce aux différents parcours proposés, j'ai pu développer mes compétences en test d'intrusion, analyse de malwares, et sécurité réseau. Chaque challenge résolu renforce ma compréhension des vulnérabilités et des méthodes de protection.
-
-                            Cette expérience pratique complète parfaitement ma formation théorique et me prépare aux défis réels de la cybersécurité que je rencontrerai dans ma future carrière professionnelle.</p>
+                            TryHackMe représente un pilier de ma formation en cybersécurité. En effet, cette plateforme m’a permis d’appréhender de manière ludique et pratique les différents concepts de sécurité informatique grâce notamment à des défis concrets. Les différents parcours proposés ont contribué à développer mes compétences dans différentes tâches comme le test d’intrusion, l’analyse de malwares ainsi que la sécurité réseau. Ainsi chaque challenge résolu renforce ma compréhension des vulnérabilités et des méthodes de protection. Cet aspect pratique de mon apprentissage vient compléter ma formation théorique et représentera un réel atout pour ma carrière professionnelle.                        </p>
                     </ParallaxLayer>
 
                     <ParallaxLayer offset={1.5}>
                         <h1>LeetCode
                             <img src={memoryIcon} alt="Mémoire" />
                         </h1>
-                        <p>LeetCode me permet de perfectionner mes compétences en algorithmique et structures de données. Cette plateforme est devenue un outil essentiel pour améliorer ma logique de programmation et ma résolution de problèmes.
-
-                            La résolution régulière d'exercices sur LeetCode m'aide à développer une approche méthodique face aux défis techniques. Cela renforce également ma maîtrise des langages de programmation que j'utilise.
-
-                            Cette pratique constante me prépare aux entretiens techniques et améliore ma capacité à concevoir des solutions efficaces et optimisées pour les projets que je développe.</p>
+                        <p>
+                            La plateforme LeetCode me permet d’améliorer mes compétences en algorithmes et structures de données. En effet, elle représente un outil essentiel à l’amélioration de ma logique de programmation et de résolution de problèmes qui m’a permis d’acquérir une approche méthodique face aux différents défis techniques à travers la résolution d’exercices. Elle m’a également permis de renforcer ma maitrise des langages de programmation et de me préparer aux entretiens techniques.
+                        </p>
                     </ParallaxLayer>
                 </Parallax>
             </div>
